@@ -32,7 +32,6 @@ public class TestAdvancedCase {
     }
 
     public void runRemoteAgents(boolean channel, boolean host) {
-        initController(true);
         log.info("Run controller/channel/host agents..");
 
         appm.setTargetController(controllerm.getType());
@@ -44,6 +43,8 @@ public class TestAdvancedCase {
         if (host) {
             hostm.runAgent("test-advanced-topo.py");
         }
+
+	initController(true);
 
         try {
             Thread.sleep(3000);
